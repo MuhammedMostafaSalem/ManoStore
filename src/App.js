@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Footer from "./Components/Utility/Footer/Footer";
 import Navbar from "./Components/Utility/Navbar/Navbar";
 
 const Layout = () => {
@@ -6,7 +7,7 @@ const Layout = () => {
     <div className="App">
       <Navbar/>
       <Outlet/>
-      <div>footer</div>
+      <Footer/>
     </div>
   )
 }
