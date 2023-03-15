@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Navbar from "./Components/Utility/Navbar/Navbar";
 
 const Layout = () => {
   return (
     <div className="App">
-      <div>navbar</div>
+      <Navbar/>
       <Outlet/>
       <div>footer</div>
     </div>
