@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./Components/Utility/Footer/Footer";
 import Navbar from "./Components/Utility/Navbar/Navbar";
+import Home from './Pages/Home/Home';
 
 const Layout = () => {
   return (
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <div>Home Page</div>,
+        element: <Home/>,
       },
       {
         path: "/products/:id",
