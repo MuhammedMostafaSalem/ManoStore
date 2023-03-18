@@ -1,4 +1,5 @@
 import React from 'react'
+import Categories from '../../Components/Categories/Categories'
 import FeaturedProducts from '../../Components/Featured Products/FeaturedProducts'
 import Slider from '../../Components/Slider/Slider'
 import Subtitle from '../../Components/Utility/Subtitle/Subtitle'
@@ -19,6 +20,7 @@ const Home = () => {
                 />
                 <FeaturedProducts />
             </div>
+            <Categories/>
         </div>
     )
 }
