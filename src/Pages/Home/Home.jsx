@@ -4,6 +4,7 @@ import Categories from '../../Components/Categories/Categories'
 import FeaturedProducts from '../../Components/Featured Products/FeaturedProducts'
 import Slider from '../../Components/Slider/Slider'
 import Subtitle from '../../Components/Utility/Subtitle/Subtitle'
+import Contact from '../../Components/Contact/Contact'
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
                 />
                 <FeaturedProducts />
             </div>
+            <Contact/>
         </div>
     )
 }
