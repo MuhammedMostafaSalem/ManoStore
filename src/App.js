@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Footer from "./Components/Utility/Footer/Footer";
 import Navbar from "./Components/Utility/Navbar/Navbar";
 import Home from './Pages/Home/Home';
+import Products from './Pages/Products/Products';
 
 const Layout = () => {
   return (
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/products/:id",
-        element: <div>Category Page</div>,
+        element: <Products/>,
       },
       {
         path: "/product/:id",
