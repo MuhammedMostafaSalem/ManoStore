@@ -3,10 +3,6 @@
     display: flex;
     gap: 20px;
 }
-.products .sideLeft {
-    /* position: sticky;
-    top: 50px; */
-}
 .products .right {
     display: block;
 }
