@@ -1,0 +1,123 @@
+.product {
+    padding: 20px 50px;
+}
+.product .product_left {
+    display: flex;
+    gap: 20px;
+}
+.product .product_left img {
+    border-radius: 20px;
+}
+.product .product_left .product_image {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.product .product_left .product_image img {
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    object-fit: cover;
+}
+.product .product_left .main_img {
+    width: 100%;
+    height: 100%;
+}
+.product .product_left .main_img img {
+    width: 100%;
+    height: 500px;
+}
+
+@media (max-width: 767px) {
+    .product .product_left .product_image {
+        flex-direction: initial;
+        width: 70%;
+        margin-bottom: 15px;
+    }
+    .product .product_left .main_img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin-bottom: 15px;
+    }
+}
+@media (max-width:575px) {
+    .product .product_left .main_img img {
+        width: 100%;
+        height: 400px;
+    }
+}
+@media (max-width: 350px) {
+    .product {
+        padding: 20px 10px;
+    }
+    .product .product_left .main_img img {
+        width: 90%;
+        height: 400px;
+    }
+}
+
+
+.product .product_right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.product .product_right .title {
+    text-transform: capitalize;
+}
+.product .product_right h3 ,
+.product .product_right p {
+    margin-bottom: 0;
+}
+.product .product_right .price {
+    font-size: 25px;
+    color: rgb(148, 148, 253);
+}
+.product .product_right p {
+    color: gray;
+}
+.product .product_right .btn {
+    padding: 0;
+}
+.product .product_right .quantity {
+    display: flex;
+    gap: 10px;
+}
+.product .product_right .btn p {
+    text-transform: capitalize;
+}
+.product .product_right .btn {
+    display: flex;
+    gap: 20px;
+}
+.product .product_right .add_btn {
+    width: 200px;
+    padding: 5px;
+}
+.product .product_right .add_btn p {
+    color: white;
+}
+.product .product_right .link {
+    display: flex;
+    gap: 25px;
+}
+.product .product_right .link .itemProduct {
+    gap: 10px;
+}
+.product .product_right .link .itemProduct,
+.product .product_right .link .itemProduct p {
+    color: #2879fe;
+}
+.product .product_right .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: gray;
+    font-size: 15px;
+}
+.product .product_right .info1 {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(238, 237, 237);
+}
