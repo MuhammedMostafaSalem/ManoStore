@@ -1,0 +1,40 @@
+.cart {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    z-index: 999;
+    background-color: #f7f6f6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 0px 7px #00000080;
+}
+.cart h3,
+.cart h6,
+.cart p {
+    margin-bottom: 0;
+}
+.cart .cartItem {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.cart .cartItem img {
+    width: 80px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.cart .cartTotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+.cart .btn {
+    text-transform: capitalize;
+}
+.cart .cartReset {
+    color: tomato;
+}
