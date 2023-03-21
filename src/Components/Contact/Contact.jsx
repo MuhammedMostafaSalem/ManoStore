@@ -21,7 +21,7 @@ const Contact = () => {
                     </div>
                 </Col>
                 <Col md='6' sm='12'>
-                    <div className="icons">
+                    <div className="contactIcons">
                         <FacebookIcon />
                         <InstagramIcon />
                         <TwitterIcon />
