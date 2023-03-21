@@ -3,6 +3,7 @@ import Footer from "./Components/Utility/Footer/Footer";
 import Navbar from "./Components/Utility/Navbar/Navbar";
 import Home from './Pages/Home/Home';
 import Products from './Pages/Products/Products';
+import Product from './Pages/Product/Product';
 
 const Layout = () => {
   return (
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <div>Product Page</div>,
+        element: <Product/>,
       },
     ],
   },
