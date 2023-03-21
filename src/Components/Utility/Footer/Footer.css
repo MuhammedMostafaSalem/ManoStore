@@ -67,3 +67,11 @@ h5 {
         width: 100%;
     }
 }
+@media (max-width: 350px) {
+    .footer .top {
+        padding: 0 10px;
+    }
+    .border-top {
+        padding: 10px;
+    }
+}
