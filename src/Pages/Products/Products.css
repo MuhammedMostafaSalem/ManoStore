@@ -1,0 +1,17 @@
+.products {
+    padding: 0 50px;
+    display: flex;
+    gap: 20px;
+}
+.products .sideLeft {
+    /* position: sticky;
+    top: 50px; */
+}
+.products .right {
+    display: block;
+}
+.list {
+    display: flex;
+    gap: 20px;
+    width: 56rem;
+}
