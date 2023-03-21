@@ -9,10 +9,14 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import Cart from '../../Cart/Cart';
 
 const Navbar = () => {
     // select toggle menu mobile
     const [mobile, setMobile] = useState(false);
+
+    // select open and close cart bar 
+    const [open, setOpen] = useState(false);
 
     return (
         <div className='navbar'>
@@ -60,7 +64,8 @@ const Navbar = () => {
                     <SearchIcon className='i'/>
                     <PersonOutlineIcon className='i'/>
                     <FavoriteBorderIcon className='i'/>
-                    <div className="cartIcon">
+
+                    <div className="cartIcon" onClick={() => setOpen(!open)}>
                         <ShoppingCartOutlinedIcon className='i'/>
                         <span>0</span>
                     </div>
@@ -73,6 +78,7 @@ const Navbar = () => {
                     </span>
                 </div>
             </div>
+            {open && <Cart/>}
         </div>
     )
 }
