@@ -1,4 +1,5 @@
 import React from 'react'
+import { Row } from 'react-bootstrap';
 import Card from '../Card/Card';
 
 const CardContainer = () => {
@@ -38,13 +39,15 @@ const CardContainer = () => {
     ]
     return (
         <div className='list'>
-            {
-                data.map((item)=> {
-                    return(
-                        <Card item={item} key={item.id}/>
-                    )
-                })
-            }
+            <Row>
+                {
+                    data.map((item)=> {
+                        return(
+                            <Card item={item} key={item.id}/>
+                        )
+                    })
+                }
+            </Row>
         </div>
     )
 }
