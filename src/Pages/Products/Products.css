@@ -9,5 +9,41 @@
 .list {
     display: flex;
     gap: 20px;
-    width: 56rem;
+}
+.card {
+    width: 221px;
+}
+.products .sideRight .sideRight_img {
+    width: 59.7rem;
+    height: 50vh;
+    margin-bottom: 20px;
+}
+.products .sideRight .sideRight_img .catImg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1199px) {
+    .card {
+        width: 162px;
+    }
+    .products .sideRight .sideRight_img {
+        width: 45rem;
+    }
+}
+@media (max-width: 1070px) {
+    .card {
+        width: 140px;
+    }
+    .products .sideRight .sideRight_img {
+        width: 39.5rem;
+    }
+}
+@media (max-width: 991px) {
+    .card {
+        width: 125px;
+    }
+    .products .sideRight .sideRight_img {
+        width: 31rem;
+    }
 }
