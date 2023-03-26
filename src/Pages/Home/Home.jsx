@@ -15,7 +15,7 @@ const Home = () => {
                     title='featured products'
                     decription= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas."
                 />
-                <FeaturedProducts />
+                <FeaturedProducts  type="featured" />
             </div>
             <Categories/>
             <div className='featured_products_section'>
@@ -23,7 +23,7 @@ const Home = () => {
                     title='trending products'
                     decription= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas."
                 />
-                <FeaturedProducts />
+                <FeaturedProducts  type="trending" />
             </div>
             <Contact/>
         </div>
