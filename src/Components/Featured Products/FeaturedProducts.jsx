@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import React from 'react'
 import { Row } from 'react-bootstrap'
 import Card from '../Card/Card'
 import './FeaturedProducts.css'
+import useFetch from '../../Hooks/useFetch';
 
-const FeaturedProducts = () => {
-
-    const [data, setData] = useState([]);
-
-    useEffect(()=> {
-        const fetchData = async () => {
-            try {
-                const res = await axios.get(
-                    process.env.REACT_APP_API_URL + "/products?populate=*",
-                    {
-                        headers: {
-                            Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
-                        },
-                    },
-                );
-                setData(res.data.data);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        fetchData();
-    }, []);
-    
+const FeaturedProducts = ({type}) => {
+    // useEffect(()=> {
+    //     const fetchData = async () => {
+    //         try {
+    //             const res = await axios.get(
+    //                 process.env.REACT_APP_API_URL + `/products?populate=*&[filters][type][$eq]=${type}`,
+    //                 {
+    //                     headers: {
+    //                         Authorization: "bearer " + process.env.REACT_APP_API_TOKEN,
+    //                     },
+    //                 },
+    //             );
+    //             setData(res.data.data);
+    //         } catch (err) {
+    //             console.log(err);
+    //         }
+    //     };
+    //     fetchData();
+    // });
+    const {data, loading, error} = useFetch(
+        `/products?populate=*&[filters][type][$eq]=${type}`
+    );
 
     return (
         <div className='featuredProducts'>
             <Row>
                 {
-                    data.map((item)=> {
+                    error ? 'Something went wrong!' : loading ? 'loading ...' :
+                    data?.map((item)=> {
                         return(
                             <Card item={item} key={item.id}/>
                         )
