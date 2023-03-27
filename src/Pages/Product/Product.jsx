@@ -6,35 +6,36 @@ import AddIcon from '@mui/icons-material/Add';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
+import useFetch from '../../Hooks/useFetch';
+import { useParams } from 'react-router-dom';
 
 const Product = () => {
-
-    const images = [
-        'https://images.pexels.com/photos/10026491/pexels-photo-10026491.png?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-        'https://images.pexels.com/photos/12179283/pexels-photo-12179283.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
-    ];
-
-
-    const [selectedImg, setSelectedImg] = useState(0);
+    const id = useParams().id;
+    const [selectedImg, setSelectedImg] = useState("img");
     const [quantity, setQuatity] = useState(1);
 
+    const {data, loading, error} = useFetch(
+        `/products/${id}?populate=*`
+    );
 
 
     return (
         <div className='product'>
+        {
+            loading ? "loading ..." :
             <Row>
                 <Col md='6' sm='12'>
                     <div className='product_left'>
                         <Row>
                             <Col md='4' sm='12'>
                                 <div className='product_image'>
-                                    <img src={images[0]} alt='' onClick={e => setSelectedImg(0)}/>
-                                    <img src={images[1]} alt='' onClick={e => setSelectedImg(1)}/>
+                                    <img src={process.env.REACT_APP_UPLOAD_URL +data?.attributes?.img?.data?.attributes?.url} alt='' onClick={e => setSelectedImg("img")}/>
+                                    <img src={process.env.REACT_APP_UPLOAD_URL +data?.attributes?.img2?.data?.attributes?.url} alt='' onClick={e => setSelectedImg("img2")}/>
                                 </div>
                             </Col>
                             <Col md='8' sm='12'>
                                 <div className='main_img'>
-                                    <img src={images[selectedImg]} alt=''/>
+                                    <img src={process.env.REACT_APP_UPLOAD_URL +data?.attributes[selectedImg]?.data?.attributes?.url} alt=''/>
                                 </div>
                             </Col>
                         </Row>
@@ -91,6 +92,7 @@ const Product = () => {
                     </div>
                 </Col>
             </Row>
+        }
         </div>
     )
 }
