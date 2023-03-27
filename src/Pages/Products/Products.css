@@ -47,3 +47,33 @@
         width: 31rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter_products {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px 0;
+}
+.filter_products .inputItem {
+    display: flex;
+    gap: 15px;
+}
