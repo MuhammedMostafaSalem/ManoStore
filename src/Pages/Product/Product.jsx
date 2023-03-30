@@ -8,13 +8,16 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
 import useFetch from '../../Hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/slices/cartSlice';
 
 const Product = () => {
     const id = useParams().id;
     const [selectedImg, setSelectedImg] = useState("img");
     const [quantity, setQuatity] = useState(1);
+    const dispatch = useDispatch();
 
-    const {data, loading, error} = useFetch(
+    const {data, loading} = useFetch(
         `/products/${id}?populate=*`
     );
 
@@ -44,12 +47,12 @@ const Product = () => {
 
                 <Col md='6' sm='12'>
                     <div className='product_right'>
-                        <h3 className='title'>title</h3>
+                        <h3 className='title'>{data?.attributes?.title}</h3>
 
-                        <span className='price'>$199</span>
+                        <span className='price'>${data?.attributes?.price}</span>
 
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas.
+                            {data?.attributes?.desc}
                         </p>
 
                         <div className='quantity'>
@@ -62,7 +65,18 @@ const Product = () => {
                             </div>
                         </div>
 
-                        <div className='btn btn-primary add_btn'>
+                        <div
+                            className='btn btn-primary add_btn'
+                            onClick={() => dispatch(addToCart(
+                                {
+                                    id: data.id,
+                                    title: data.attributes.title,
+                                    desc: data.attributes.desc,
+                                    price: data.attributes.price,
+                                    img: data.attributes.img.data.attributes.url,
+                                    quantity,
+                                }
+                            ))}>
                             <ShoppingCartOutlinedIcon/>
                             <p>add to cart</p>
                         </div>
