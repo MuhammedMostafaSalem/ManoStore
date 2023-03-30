@@ -10,6 +10,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import Cart from '../../Cart/Cart';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
     // select toggle menu mobile
@@ -17,6 +18,9 @@ const Navbar = () => {
 
     // select open and close cart bar 
     const [open, setOpen] = useState(false);
+
+    // show total quantity in nav_icons => cart_icon
+    const products = useSelector((state) => state.cart.products);
 
     return (
         <div className='navbar'>
@@ -67,7 +71,7 @@ const Navbar = () => {
 
                     <div className="cartIcon" onClick={() => setOpen(!open)}>
                         <ShoppingCartOutlinedIcon className='i'/>
-                        <span>0</span>
+                        <span>{products.length}</span>
                     </div>
                 </div>
                 <div className='mobile_bar' onClick={()=> setMobile(!mobile)}>
